@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// deklarasi struktur
+    struct produk {
+        char kodeproduk;
+        float harga;
+        int stok;
+    };
+
+int main() 
+{
+    // deklarasi variabel
+    struct produk produk1 = {'A', 15000.0, 100};
+    struct produk produk2 = {'B', 20000.0, 50};
+
+    // deklarasi pointer ke produk
+    struct produk* ptrproduk;
+
+    // menunjuk ke produk1
+    ptrproduk = &produk1;
+
+    // menampilkan alamat memori dan data produk1
+    printf("Alamat memori produk1: %p\n", ptrproduk);
+    printf("kode produk: %c\n", ptrproduk->kodeproduk);
+    printf("harga produk: Rp %.2f\n", ptrproduk->harga);
+    printf("stok produk: %d\n\n", ptrproduk->stok);
+
+    // mengubah harga dan stok produk1 melalui pointer
+    ptrproduk->harga = 14500.0;
+    ptrproduk->stok += 10;
+
+    // menampilkan data produk1
+    printf("data produk1 setelah perubahan:\n");
+    printf("kode produk: %c\n", ptrproduk->kodeproduk);
+    printf("harga produk baru: Rp  %.2f\n", ptrproduk->harga);
+    printf("stok produk baru: %d\n\n", ptrproduk->stok);
+
+    // menunjuk ke produk2
+    ptrproduk = &produk2;
+
+    // menampilkan alamat memori
+    printf("Alamat memori produk2: %p\n", ptrproduk);
+    printf("kode produk: %c\n", ptrproduk->kodeproduk);
+    printf("harga produk: Rp %.2f\n", ptrproduk->harga);
+    printf("stok produk: %d\n", ptrproduk->stok);
+
+return 0;
+}
