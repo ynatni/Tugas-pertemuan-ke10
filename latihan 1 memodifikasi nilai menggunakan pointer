@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() 
+{
+    // deklarasi
+    int myAge = 43; 
+    int* ptr = &myAge; // pointer ke myAge
+
+    // menampilkan nilai awal
+    printf("nilai awal myAge: %d\n", myAge);
+
+    // mengubah nilai myage melalui pointer
+    *ptr = 50;
+
+    //  menampilkan nilai setelah modifikasi
+    printf("Nilai setelah diubah melalui pointer: %d\n", myAge);
+
+    return 0;
+}
