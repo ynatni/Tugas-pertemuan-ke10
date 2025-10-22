@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+    // fungsi yang mencoba mengubah nilai dengan variabel biasa (tidak berhasil)
+    void ubahdenganvariabel(int nilai) {
+        nilai = 50;
+        printf("nilai di dalam fungsi (dengan variabel biasa): %d\n", nilai);
+    }
+    // fungsi yang mengubah nilai dengan pointer (berhasil)
+    void ubahdenganpointer(int* nilaiptr) {
+        *nilaiptr = 50;
+        printf("nilai di dalam fungsi (dengan pointer): %d\n", *nilaiptr);
+    }
+    
+    int main() {
+        int angka = 10;
+
+        // output sebelum perubahan 
+        printf("nilai sebelum perubahan: %d\n\n", angka);
+
+        // menggunakan variabel biasa
+        ubahdenganvariabel(angka);
+        printf("nilai setelah fungsi ubahdenganvariabel: %d\n\n", angka);
+
+        ubahdenganpointer(&angka);
+        printf("nilai setelah fungsi ubahdenganpointer: %d\n\n", angka);
+
+        return 0;
+    }
